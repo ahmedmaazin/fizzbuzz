@@ -9,25 +9,27 @@ function fizzBuzzRunner()
     $fizzBuzzCount = 0;
 
     for ($i = 1; $i <= 1000000000; $i++) {
-        if ($i % 3 === 0 && $i % 5 === 0) {
-            $fizzBuzzCount++;
-        }
-
-        if ($i % 3 === 0) {
-            $fizzCount++;
-        }
-
-        if ($i % 5 === 0) {
-            $buzzCount++;
+        if ($i % 3 == 0) {
+            if ($i % 5 == 0) {
+                $fizzBuzzCount++;
+            } else {
+                $fizzCount++;
+            }
+        } else if ($i % 5 == 0) {
+            if ($i % 3 == 0) {
+                $fizzBuzzCount++;
+            } else {
+                $buzzCount++;
+            }
         }
     }
 
-    $doneSeconds = microtime(true) - $start;
+    $doneSeconds = (microtime(true) - $start) * 1000;
 
     echo "fizzes:" . $fizzCount . PHP_EOL .
         "buzzes:" . $buzzCount . PHP_EOL .
         "fizzBuzzes: " . $fizzBuzzCount . PHP_EOL .
-        "completed_in: " . $doneSeconds . " seconds" . PHP_EOL;
+        "completed_in: " . $doneSeconds . "ms" . PHP_EOL;
 }
 
 fizzBuzzRunner(); 
