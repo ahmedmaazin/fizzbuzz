@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 function fizzBuzzRunner() {
     let fizzCount = 0;
     let buzzCount = 0;
@@ -6,14 +8,14 @@ function fizzBuzzRunner() {
     console.time('completed_in');
 
     for (let i = 1; i <= 1000000000; i++) {
-        if (i % 3 == 0) {
-            if (i % 5 == 0) {
+        if (i % 3 === 0) {
+            if (i % 5 === 0) {
                 fizzBuzzCount++;
             } else {
                 fizzCount++;
             }
-        } else if (i % 5 == 0) {
-            if (i % 3 == 0) {
+        } else if (i % 5 === 0) {
+            if (i % 3 === 0) {
                 fizzBuzzCount++;
             } else {
                 buzzCount++;

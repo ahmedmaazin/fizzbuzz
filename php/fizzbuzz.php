@@ -1,3 +1,5 @@
+#!/usr/local/bin/php
+
 <?php
 
 function fizzBuzzRunner()
@@ -24,12 +26,12 @@ function fizzBuzzRunner()
         }
     }
 
-    $doneSeconds = (microtime(true) - $start) * 1000;
+    $doneSeconds = microtime(true) - $start;
 
     echo "fizzes:" . $fizzCount . PHP_EOL .
         "buzzes:" . $buzzCount . PHP_EOL .
         "fizzBuzzes: " . $fizzBuzzCount . PHP_EOL .
-        "completed_in: " . $doneSeconds . "ms" . PHP_EOL;
+        "completed_in: " . $doneSeconds . " seconds" . PHP_EOL;
 }
 
 fizzBuzzRunner(); 

@@ -1,6 +1,11 @@
+#!/usr/bin/env python
+
+import time
+
 fizzCount = 0
 buzzCount = 0
 fizzBuzzCount = 0
+start = time.time()
 
 for i in range(1, 1000000000):
     if i % 3 == 0:
@@ -14,4 +19,9 @@ for i in range(1, 1000000000):
         else:
             buzzCount += 1
 
-print("fizzes: " + str(fizzCount), "buzzes: " + str(buzzCount), "fizzBuzzes: " + str(fizzBuzzCount))
+doneSeconds = (time.time() - start)
+
+print("fizzes: " + str(fizzCount) + "\n",
+      "buzzes: " + str(buzzCount) + "\n",
+      "fizzBuzzes: " + str(fizzBuzzCount) + "\n",
+      "completed_in: " + str(doneSeconds) + " seconds" + "\n")
